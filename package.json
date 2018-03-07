@@ -1,0 +1,13 @@
+{
+  "name": "you-like-hits",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "selenium-webdriver": "^3.3.0"
+  },
+  "devDependencies": {
+    "chromedriver": "^2.35.0",
+    "sync-request": "^5.0.0"
+  }
+}
