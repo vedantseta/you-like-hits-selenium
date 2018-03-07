@@ -13,7 +13,7 @@ Change
 $ npm install
 ```
 
-You will need latest [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/downloads) which you have to place in current folder for linux and mac platforms. Windows user can confirm the installation and update the README for others to help.  
+You need latest [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/downloads) which you have to place in current project folder for linux and mac platforms. Windows user can confirm the installation and update the README for others to help.  
 
 
 ### Run
