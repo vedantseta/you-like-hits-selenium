@@ -22,6 +22,12 @@ You need latest [Chrome Driver](https://sites.google.com/a/chromium.org/chromedr
 $ node index.js
 ```
 
+## Deploy this project on Heroku
+
+- Add this in buildpack `https://github.com/stomita/heroku-buildpack-phantomjs`
+- Add your username & password as specified above
+- Change [chrome](https://github.com/vedantseta/you-like-hits-selenium/blob/4ec1532652feca1b250aa8391ad0d146bc014014/index.js#L5) to phantomjs
+
 ### Further Updates (Looking for Contribution)
 - Headless Browser
 - Windows support confirmation
