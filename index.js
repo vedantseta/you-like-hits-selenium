@@ -1,8 +1,8 @@
 var webdriver = require("selenium-webdriver");
 const { Builder, By, Key, until } = require("selenium-webdriver");
 var request = require("sync-request");
-const userName = process.argv[2];
-const  password = process.argv[3];
+const userName = process.env.userName;
+const  password = process.env.password;
 
 console.log("Process started with " + userName + " " + password);
 var driver = new webdriver.Builder().forBrowser("phantomjs").build();
