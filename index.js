@@ -6,17 +6,35 @@ const  password = process.env.password;
 
 console.log("Process started with " + userName + " " + password);
 var driver = new webdriver.Builder().forBrowser("phantomjs").build();
-
+var hits = 0;
 setTimeout(function(){driver.quit();console.log("Exists after 30 mins");throw new Error('exists after 30 mins');},2500000);
 
 
 driver.get("https://youlikehits.com/");
 driver.sleep(30000);
 try {
-driver.findElement({ id: "username" }).sendKeys(userName);
-driver.findElement({ id: "password" }).sendKeys(password);
-driver.findElement(By.css("input[value=Login]")).click();
-driver.sleep(15000);
+	driver.findElement({ id: "username" }).sendKeys(userName);
+	driver.findElement({ id: "password" }).sendKeys(password);
+	driver.findElement(By.css("input[value=Login]")).click();
+	driver.sleep(15000).then(function(){
+		driver.get("https://youlikehits.com/stats.php");
+		driver.sleep(10000);
+		hits = driver.findElement(By.css("#bodybg > table.mainbodyloggedin > tbody > tr > td > table:nth-child(1) > tbody > tr > td > table > tbody > tr > td > table:nth-child(6) > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(2) > td > center > font")).getText();
+		hits.then(function(text){
+			if(parseInt(text) > 100) {
+				driver.sleep(3600000)
+			
+			}
+		);
+	});
+} catch(e) {
+	console.log(e);
+	console.log("Cannot do anything");
+}
+
+
+function start() {
+try {
 var counter = 0;
 driver.get("https://youlikehits.com/youtubenew2.php").then(function() {
   CaptchaSolver();
@@ -26,7 +44,7 @@ driver.get("https://youlikehits.com/youtubenew2.php").then(function() {
 console.log(e);
  console.log("Can do nothing");
 }
-
+}
 function loop() {
   driver
     .executeScript('return document.querySelector("a[class=followbutton]")')
