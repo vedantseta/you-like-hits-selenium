@@ -25,7 +25,7 @@ try {
 				driver.sleep(3600000)
 			
 			}
-		);
+		});
 	});
 } catch(e) {
 	console.log(e);
